@@ -143,7 +143,7 @@ NavBar::end();
                     </div>
                 </div>
             </form>
-            <p>
+            <p class="footer-icons-social">
                 <a href="https://www.facebook.com" target="_blank"><img src="/images/facebook.svg" class="img-responsive net-social" alt="fb"></a>
                 <a href="https://twitter.com" target="_blank"><img src="/images/twitter.svg" class="img-responsive net-social" alt="twit"></a>
                 <a href="https://www.youtube.com/" target="_blank"><img src="/images/youtube.svg" class="img-responsive net-social" alt="ytube"></a>
