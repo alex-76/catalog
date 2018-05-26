@@ -38,8 +38,6 @@ NavBar::begin([
     ],
 ]);
 
-
-
 echo Nav::widget([
     'options' => ['class' => 'navbar-nav navbar-right'],
     'items' => [
@@ -68,15 +66,12 @@ NavBar::end();
     <?= Alert::widget() ?>
 
     <div class="row">
-
         <div class="col-md-3 lf-block">
             <p><a href="/add" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"></span> Додати компанію</a></p>
 
             <div class="header-h3"><span class="glyphicon glyphicon-pushpin"></span> Нові підприємства</div>
             <?php echo CompanyWidget::widget(); ?>
-
             <?php echo BannerWidget::widget(); ?>
-
         </div>
 
         <div class="col-md-6">
@@ -100,7 +95,6 @@ NavBar::end();
         </div>
     </div>
 </div>
-
 </div>
 
 
