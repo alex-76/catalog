@@ -3,3 +3,4 @@
 return [
     'adminEmail' => 'admin@localhost.com',
 ];
+
