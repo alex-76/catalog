@@ -2,7 +2,6 @@ html,
 body {
     height: 100%;
 }
-
 .wrap {
     min-height: 100%;
     height: auto;
@@ -69,11 +68,10 @@ h1 {
     border-radius: 0;
 }
 
-/*** breadcrumb ***/
+/*** style for breadcrumb ***/
 .breadcrumb li {
     font-size: 12px;
 }
-
 /*** Style for all pages / post.php, fiter.php, search.php ***/
 .link-subcat {
     color:#0D3349;
@@ -94,13 +92,11 @@ h1 {
     font-size: 80%;
     color: #3f5796;
 }
-
 /*** Footer block ***/
 .footer div.ft {
     font-size: 13px;
     padding: 5px 55px;
 }
-
 .footer {
     background-color: #337ab7;
     border-top: 1px solid #ddd;
