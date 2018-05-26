@@ -1,0 +1,23 @@
+.title-main {
+    font-size: 22px;
+}
+.title-main a {
+    color: #454545;
+}
+.title-main a:hover {
+    color: #3f5796;
+}
+
+.posted-on {
+    font-style: italic;
+    font-size: 13px;
+    color: #26a1d6;
+}
+.posted-on i {
+    color: #b4b4b4;
+}
+
+
+
+
+

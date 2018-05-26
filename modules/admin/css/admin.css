@@ -1,0 +1,21 @@
+h1 {
+    font-size: 28px;
+}
+
+.breadcrumb li {
+    font-size: 12px;
+}
+
+.footer {
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+.footer .container {
+    font-size: 12px;
+    padding: 0;
+    margin-left: 40px;
+}
+.row-footer {
+    margin-right: 0;
+}

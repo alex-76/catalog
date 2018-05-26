@@ -1,0 +1,361 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.header-h3 {
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    display: block;
+}
+.header-h4 {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    display: block;
+}
+
+/*** Menu top ***/
+.navbar {
+    border-radius: 0;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #066cb0;
+}
+.navbar-inverse .navbar-nav > li > a {
+    color: #d7d7d7;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    border-bottom: 2px solid #fff;
+}
+#w0-collapse li.active  a {
+    font-weight: bold;
+    background-color: #009688;
+}
+.active-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    font-weight: bold;
+    background-color: #009688;
+    color: #fff;
+    line-height: 20px;
+    margin-top: 5px;
+}
+/*** Form search ***/
+.well {
+    border-radius: 0;
+}
+
+/*** breadcrumb ***/
+.breadcrumb li {
+    font-size: 12px;
+}
+
+/*** Style for all pages / post.php, fiter.php, search.php ***/
+.link-subcat {
+    color:#0D3349;
+}
+.title-main {
+    margin:10px 0 0 0;
+    font-size: 20px;
+}
+.discription {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #6f6f6f;
+}
+.foto_company {
+    margin-top:10px
+}
+.data-publication {
+    font-size: 80%;
+    color: #3f5796;
+}
+
+/*** Footer block ***/
+.footer div.ft {
+    font-size: 13px;
+    padding: 5px 55px;
+}
+
+.footer {
+    background-color: #337ab7;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+    margin-top: 50px;
+    color: #f8f8f8;
+}
+.footer ul li a {
+    color: #fcfcfc;
+}
+.footer .container-fluid {
+    font-size: 12px;
+    padding: 0;
+    margin: 20px 40px 0 40px;
+    border-top: 1px solid #f5f5f5;
+    padding-top: 20px;
+}
+.footer .net-social {
+    width: 32px;
+    height: 32px;
+    display:inline;
+}
+.row-footer {
+    margin-right: 0;
+}
+
+/*** Breadcrumb ***/
+.breadcrumb > li + li::before {
+    padding: 0 5px;
+    color: #8f8f8f;
+    content: "\00bb ";
+}
+/*** Button search ***/
+.btn, .btn:hover, .btn:active, .btn:visited
+ {
+    background-color: #009688;
+    border-radius: 0;
+    border: none;
+    color: #fff;
+}
+#btn-subscription {
+    color:#fff;
+}
+
+.btn-search,.btn-search:hover, .btn-search:active  {
+    color: #fff !important;
+    border-radius: 0;
+    border: none;
+    background-color: #009688 !important;
+}
+
+li .logout, li .logout:hover {
+    margin-top: 7px;
+    background:none;
+}
+
+
+.children-items li {
+    list-style: none;
+    list-style-type: square;
+}
+.filter-area a, .filter-area li {
+    color:#666;
+    font-size: 13px;
+}
+.last-company a {
+    font-size: 13px;
+    font-weight: normal;
+    color:#666;
+}
+
+/** VIP publish */
+.vip-style {
+    background: #39f7d524;
+    margin-top: 5px;
+}
+.firm-list-item {
+    box-shadow: 0 2px 3px rgba(0,0,0,0.35);
+    margin-top:15px;
+}
+
+.img_attachment {
+    margin-bottom: 10px;
+}
+
+
+
+/*** Pagination ***/
+.pagination > li > a, .pagination > li > span {
+    border: none;
+    font-size: 20px;
+    color: #6e6e6e;
+}
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+    background-color: #FFF;
+    color: #0a0a0a;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/***  Menu tarif plan ***/
+.tarif-plan {
+    font-size: 13px;
+}
+.tarif-plan li a {
+    color:#666;
+}
+.field-search {
+    font-style: italic;
+    border-radius: 0;
+}
+
+.subscription-note {
+    display: none;
+}
+.ft-subscription {
+    margin-bottom: 7px;
+}
+
+/*** Last news ***/
+.last-news-head {
+    margin: 3px 0 3px 0;
+    font-size: 14px;
+}
+.last-news-content {
+    font-size: 12px;
+    color:#666;
+}
+
+/*** Fields no border-radius ***/
+.subscription, .form-control {
+    border-radius: 0;
+    border:none;
+    border-bottom: 1px solid #dbdbdb;
+}
+.has-success .form-control {
+    border-bottom: 2px solid #3c763d;
+}
+/*** Error info under fields ***/
+#active-form .help-block {
+    font-size: 12px;
+}
+
+
+/*** Diffrent device ***/
+@media (min-width:991px) and (max-width:2300px) {
+    .menu-top {
+        height: 60px;
+        margin-top: 10px;
+    }
+    .field-search {
+        width: 81% !important;
+        border: 1px solid #dbdbdb !important;
+    }
+    .lf-block {
+        padding-left: 60px;
+    }
+    #top-company {
+        margin: 0 0 15px 0;
+    }
+    .modal-dialog {
+        width: 400px;
+    }
+}
+@media (min-width:768px) and (max-width:992px) {
+    .header-h3 {
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .menu-top {
+        height: 60px;
+        margin-top: 10px;
+    }
+    .field-search {
+        width: 88% !important;
+        display: inline-block;
+    }
+    .lf-block {
+        padding-left: 60px;
+    }
+    #top-company {
+        margin: 15px 0;
+    }
+    .subscription {
+        width: 45%;
+    }
+    .modal-dialog {
+        width: 400px;
+    }
+}
+@media (min-width:271px) and (max-width:767px) {
+    .header-h3 {
+        font-weight: bold;
+        font-size: 24px;
+    }
+    .field-search {
+        width: 60% !important;
+        display: inline-block;
+    }
+    .lf-block {
+        padding-left: 15px;
+    }
+    .posted-on {
+        width: 85% !important;
+        display: inline-block;
+    }
+    #top-company {
+        margin: 15px 0;
+    }
+    .subscription {
+        width: 60%;
+    }
+    .filter-area a,
+    .filter-area li,
+    .tarif-plan,
+    .footer div.ft,
+    .list-subcategory li a,
+    .last-company a,
+    .last-news-head
+    {
+        font-size: 18px;
+    }
+    .last-news-content {
+        font-size: 16px;
+    }
+    .connect-client {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
