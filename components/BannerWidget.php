@@ -27,15 +27,17 @@ class BannerWidget extends Widget
         andWhere(['<=', 'date_begin', date('Y-m-d H:i:s',time()+3600)])->
         count();
 
-        $this->html.= '<div class="header-h3" id="top-company"><span class="glyphicon glyphicon-stats"></span> ТОП '.$count.' компаній</div>';
+        if ($count > 0) {
 
-        foreach ($model as $val) {
+            $this->html .= '<div class="header-h3" id="top-company"><span class="glyphicon glyphicon-stats"></span> ТОП ' . $count . ' компаній</div>';
 
-            foreach ($val->getImages() as $img) {
-                $this->html.= '<a target="_blank" href="http://'.$val->url.'" '.implode(explode(" ", $val->attributes)).'>'.Html::img($img->getUrl('250x'),['class'=>'img_attachment']).'</a>';
-                $this->html.= '<div class="clearfix visible-sm"></div><div class="clearfix visible-xs"></div>';
+            foreach ($model as $val) {
+
+                foreach ($val->getImages() as $img) {
+                    $this->html .= '<a target="_blank" href="http://' . $val->url . '" ' . implode(explode(" ", $val->attributes)) . '>' . Html::img($img->getUrl('250x'), ['class' => 'img_attachment']) . '</a>';
+                    $this->html .= '<div class="clearfix visible-sm"></div><div class="clearfix visible-xs"></div>';
+                }
             }
-
         }
     }
 
