@@ -34,7 +34,8 @@ tests/_support/_generated
 
 ##########################
 # config
-config/
+config/db.php
+config/db-remote.php
 
 # runtime
 runtime/
