@@ -80,16 +80,21 @@ $this->registerCssFile('@web/css/add.css', ['depends' => [yii\bootstrap\Bootstra
     echo $form->field($form_model, 'subcategory_id')->dropDownList([],$params)->label(''); ?>
 
 <?= $form->field($form_model, 'description')->textarea(['rows' => '3', 'placeholder' => "Опис діяльності"])->label(''); ?>
-<?= $form->field($form_model, 'plan')->radioList(array('0' => 'Стандарт',1 => 'Преміум'),['value'=>0,'id'=>'plan']); ?>
+    <?= $form->field($form_model, 'plan')->radioList(array('0' => 'Стандарт', 1 => 'Преміум'), ['value' => 0, 'id' => 'plan'])->
+    hint('<a href="/plan">Ознайомитися з умовами тарифу</a>'); ?>
 <div id="panel-upload" style="display: none;">
-    <?= $form->field($form_model, 'gallery[]')->fileInput(['multiple' => true]) ?>
+    <?= $form->field($form_model, 'gallery[]')->fileInput(['multiple' => true])->
+    hint('<small>формат: png, jpg, gif, doc, docx, xlsx, xls pdf<br> макс. розмір: 1.5 Mb.</small>') ?>
 </div>
 
+    <?= $form->field($form_model, 'image')->fileInput()->hint('<small>формат: jpg, gif, png<br> макс. розмір: 1 Mb.</small>') ?>
+    <div class="form-group">
+        <?= Html::checkbox('agree', false, ['label' => 'Погоджуюся з умовами', 'id' => 'oferta']); ?>
+        <a href="#">Угоди користувача</a>
+    </div>
 
-<?= $form->field($form_model, 'image')->fileInput() ?>
 
-
-<?= Html::submitButton('Відправити', ['class' => 'btn btn-lg']) ?>
+    <?= Html::submitButton('Відправити', ['class' => 'btn btn-lg btn-danger', 'id' => 'btn-send']) ?>
 <?php ActiveForm::end() ?>
 
 <?php endif; ?>
@@ -133,6 +138,20 @@ $("#post-category_id").change(function () {
 });
 $(':radio').click(function(){    
     $('#panel-upload').toggle(300);    
+});
+
+$(function(){    
+    // Agreement with dogovor
+    $('#btn-send').attr('disabled','disabled');
+    $('#oferta').click(function(){
+
+        var elem = $('#btn-send');
+        if(elem.attr('disabled') == 'disabled') {
+            elem.removeAttr('disabled');
+        } else {
+            $('#btn-send').attr('disabled','disabled');
+        }
+    });    
 });
 
 JS;

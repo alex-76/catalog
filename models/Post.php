@@ -65,7 +65,7 @@ class Post extends \yii\db\ActiveRecord
             [['email', 'phone'], 'string', 'max' => 100],
             ['email', 'email','message' => '«Email» є некоректним адресом.'],
             [['url_site', 'logo_name'], 'string', 'max' => 200],
-            [['image'], 'file', 'extensions' => 'png, jpg, gif','maxSize' => 900000, 'tooBig' => 'Макс. розмір 900Kb'],
+            [['image'], 'file', 'extensions' => 'png, jpg, gif', 'maxSize' => 1000000, 'tooBig' => 'Макс. розмір 1Mb'],
             [['gallery'], 'file', 'extensions' => 'png, jpg, gif, doc, docx, xlsx, xls pdf','maxFiles'=>3,'maxSize' => 1500000, 'tooBig' => 'Макс. розмір 1.5Mb'],
         ];
     }
