@@ -94,7 +94,7 @@ $this->registerCssFile('@web/css/add.css', ['depends' => [yii\bootstrap\Bootstra
     </div>
 
 
-    <?= Html::submitButton('Відправити', ['class' => 'btn btn-lg btn-danger', 'id' => 'btn-send']) ?>
+    <?= Html::submitButton('Відправити', ['class' => 'btn btn-lg', 'id' => 'btn-send']) ?>
 <?php ActiveForm::end() ?>
 
 <?php endif; ?>
