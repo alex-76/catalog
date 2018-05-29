@@ -7,7 +7,12 @@ use yii\widgets\Breadcrumbs;
 
 $this->params['breadcrumbs'][] =  'Новини';
 
-$this->title = 'Список останніх новин';
+$this->title = 'Останні економічні новини України -  Каталог Панорама';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Новини бізнесу. Свіжі новини компаній каталогу. Виставки, конференції України: прес релізи. 
+    Розвиток ринку, фінанси України, економічний розвиток. Фінансовий аналіз.'
+]);
 
 $this->registerCssFile('@web/css/news.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 

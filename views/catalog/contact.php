@@ -9,8 +9,14 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
 
-$this->title = 'Контакти';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Наші Контакти - Каталог Панорама';
+$this->params['breadcrumbs'][] = 'Контакти';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Наші контакти: все про бізнес каталог Панорама. Замовити розміщення на сайті, зареєструвати 
+    підприємство онлайн. Телефонуйте'
+]);
+
 
 $this->registerCssFile('@web/css/contact.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 ?>
@@ -34,6 +40,26 @@ $this->registerCssFile('@web/css/contact.css', ['depends' => [yii\bootstrap\Boot
 
         <div class="row">
             <div class="col-md-12">
+
+                <div class="header-h2">ТОВ "Панорама Полтавщини"</div>
+                <p>Код ЄДРПОУ 40710843</p>
+                <p>Р/Р 26009054629499 в ПАТ КБ «ПРИВАТБАНК»</p>
+                <p>МФО 331401</p>
+                <div class="header-h2">Директор - Зінаїда Дикань</div>
+                <p>(0532) 69-02-69,</p>
+                <p>050 216-00-69,</p>
+                <p>098-709-89-01.</p>
+                <div class="header-h2">Обслуговування клієнтів – Галина Гончарук</div>
+                <p>(0532) 65-40-74,</p>
+                <p>099 021-03-59,</p>
+                <p>096 906-62-13.</p>
+                <div class="header-h2">Бухгалтерія - Марина Сергєєва</div>
+                <p>099-279-82-13,</p>
+                <p>093-322-16-67.</p>
+                <p>E-mail: info.catalog.ua@gmail.com</p>
+                <div class="header-h2">Для листів:</div>
+                <p>а/с 1943, м. Полтава-21, 36021.</p>
+                <div class="header-h2">Написати листа</div>
 
                 <?php $form = ActiveForm::begin([
                         'id' => 'contact-form',

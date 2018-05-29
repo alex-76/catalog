@@ -4,10 +4,13 @@ use yii\widgets\ListView;
 
 /* @var $this yii\web\View */
 
-$this->title = 'Каталог підприємств України по рубриках і регіонах';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Підприємства України. Онлайн  каталог підприємств  - Каталог Панорама';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Каталог підприємств України по рубриках та регіонах. Існуючі підприємства, нові підприємства,
+     бази підприємств, компанії України. Повна база даних підприємства України.'
+]);
 
-//$this->registerJsFile("@web/js/main.js",['depends' =>'yii\web\YiiAsset']);
 $this->registerCssFile('@web/css/main.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 ?>
 

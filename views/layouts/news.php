@@ -47,8 +47,8 @@ echo Nav::widget([
             ['label' => 'НОВИНИ', 'url' => ['news/index']]:
             '<li class="active"><span class="active-item">НОВИНИ</span></li>',
         (Yii::$app->controller->id.'/'.Yii::$app->controller->action->id != 'catalog/plan')?
-            ['label' => 'ДОДАТИ ІНФОРМАЦІЮ', 'url' => ['/plan']]:
-            '<li class="active"><span class="active-item">ДОДАТИ ІНФОРМАЦІЮ</span></li>',
+            ['label' => 'ПОСЛУГИ', 'url' => ['/plan']] :
+            '<li class="active"><span class="active-item">ПОСЛУГИ</span></li>',
         (Yii::$app->controller->id.'/'.Yii::$app->controller->action->id != 'catalog/contact')?
             ['label' => 'КОНТАКТИ', 'url' => ['/contact']]:
             '<li class="active"><span class="active-item">КОНТАКТИ</span></li>'
@@ -107,7 +107,7 @@ NavBar::end();
                 <li><a href="/">Головна</a></li>
                 <li><a href="/about">Про нас</a></li>
                 <li><a href="/news/index">Новини</a></li>
-                <li><a href="/plan">Додати інформацію</a></li>
+                <li><a href="/plan">Послуги</a></li>
                 <li><a href="/contact">Контакти</a></li>
             </ul>
         </div>

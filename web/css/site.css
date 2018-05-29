@@ -17,6 +17,15 @@ h1 {
     font-size: 24px;
 }
 
+h2 {
+    font-size: 22px;
+}
+
+.header-h2 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
 .header-h3 {
     font-size: 20px;
     margin-top: 20px;
@@ -122,6 +131,7 @@ h1 {
 
 .footer .footer-icons-social {
     margin: 10px 0 0 0;
+    text-indent: 0;
 }
 
 .ft .form-horizontal .form-group {
