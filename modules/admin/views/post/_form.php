@@ -24,7 +24,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'phone')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'url_site')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'url_site')->textInput(['maxlength' => true])->hint('<small>формат: panpram.com.ua</small>') ?>
 
 
     <?php
