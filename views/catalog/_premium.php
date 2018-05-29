@@ -47,7 +47,9 @@ $this->registerJsFile("https://maps.googleapis.com/maps/api/js?key=AIzaSyDXZwI4S
         <div class="row">
             <div class="col-md-6 info-client">
                 <div><b><span class="glyphicon glyphicon-globe"></span> Сайт:</b></div>
-                <p class="text-primary"><?= $result[0]->url_site; ?></p>
+                <p class="text-primary"><a href="http://<?= $result[0]->url_site; ?>" target="_blank" rel="nofollow">
+                        <?= $result[0]->url_site; ?>
+                    </a></p>
             </div>
         </div>
         <div class="row">

@@ -26,7 +26,10 @@
                 </div>
                 <div class="col-sm-6 col-md-6">
                     <div><b><span class="glyphicon glyphicon-globe"></span> Сайт:</b></div>
-                    <p class="text-primary"><?= $result[0]->url_site; ?></p>
+                    <p class="text-primary"><a href="http://<?= $result[0]->url_site; ?>" target="_blank"
+                                               rel="nofollow">
+                            <?= $result[0]->url_site; ?>
+                        </a></p>
                 </div>
             </div>
         </div>
