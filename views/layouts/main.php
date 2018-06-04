@@ -114,7 +114,7 @@ NavBar::end();
             <div class="header-h4">РОЗМІЩЕННЯ ІНФОРМАЦІЇ</div>
             <ul class="list-unstyled">
                 <li><a href="/add">Додати компанію</a></li>
-                <li><a href="#">Угода користувача</a></li>
+                <li><a target="_blank" href="/files/ugoda.pdf">Угода користувача</a></li>
             </ul>
         </div>
         <div class="col-md-3 ft">
