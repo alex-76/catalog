@@ -20,7 +20,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
     ]) ?>
 
-
     <p>
         <?= Html::a('Додати відгук', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
