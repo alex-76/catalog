@@ -97,7 +97,7 @@ class PostController extends AppAdminController
 
         if ($model->load(Yii::$app->request->post()) && $modelPayments->load(Yii::$app->request->post())) {
 
-            $model->description = strip_tags($model->description);
+            $model->description = strip_tags($model->description, '<a>');
 
             $isValid = $model->validate();
             $isValid = $modelPayments->validate() && $isValid;
@@ -150,8 +150,7 @@ class PostController extends AppAdminController
 
         if ($model->load(Yii::$app->request->post()) && $modelPayments->load(Yii::$app->request->post())) {
 
-            $model->description = strip_tags($model->description);
-
+            $model->description = strip_tags($model->description, '<a>');
             $isValid = $model->validate();
             $isValid = $modelPayments->validate() && $isValid;
             if ($isValid) {
