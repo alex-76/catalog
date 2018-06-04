@@ -41,7 +41,7 @@ class ReviewsSearch extends Reviews
      */
     public function search($params)
     {
-        $query = Reviews::find()->orderBy('date_publication DESC');;
+        $query = Reviews::find()->orderBy('date_publication DESC');
 
         // add conditions that should always apply here
 

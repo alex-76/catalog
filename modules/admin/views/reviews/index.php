@@ -60,7 +60,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw',
                 'value' => function($data){
                     $result = \app\models\News::find()->where(['news_id' => $data->news_id])->asArray()->all();
-                    return $result[0]['name_news'];
+                    return (!empty($result[0]['name_news'])) ? $result[0]['name_news'] : '<span style="color:#d21717">Стаття видалена</span>';
                 },
             ],
             [
