@@ -42,6 +42,8 @@ runtime/
 
 # web/assets
 web/assets/
+web/images/
+web/files/
 
 commands/
 vendor/

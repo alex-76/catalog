@@ -26,7 +26,7 @@ AppAsset::register($this);
 <body>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99339955-1"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-99339955-2"></script>
 <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() {
@@ -34,7 +34,7 @@ AppAsset::register($this);
     }
     gtag('js', new Date());
 
-    gtag('config', 'UA-99339955-1');
+    gtag('config', 'UA-99339955-2');
 </script>
 
 
