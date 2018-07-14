@@ -33,7 +33,6 @@ AppAsset::register($this);
         dataLayer.push(arguments);
     }
     gtag('js', new Date());
-
     gtag('config', 'UA-99339955-2');
 </script>
 
@@ -45,7 +44,7 @@ AppAsset::register($this);
 <?php
 NavBar::begin([
     'innerContainerOptions' => ['class' => 'container-fluid menu-top'],
-    'brandLabel' => 'ЛОГОТИП',
+    'brandLabel' => '<img src="/images/logo.png"/>',
     'brandUrl' => 'javascript:(0)',//Yii::$app->homeUrl,
     'options' => [
         'class' => 'navbar-inverse',

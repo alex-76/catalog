@@ -58,6 +58,10 @@ h2 {
 .navbar-inverse .navbar-nav > li > a:hover {
     border-bottom: 2px solid #fff;
 }
+
+.navbar-brand {
+    padding-top: 0;
+}
 #w0-collapse li.active  a {
     font-weight: bold;
     background-color: #009688;
