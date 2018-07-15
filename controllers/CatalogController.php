@@ -65,7 +65,9 @@ class CatalogController extends Controller
             andWhere(['<=', 'date_publication', Yii::$app->formatter->asDate(time()+10800, 'php:Y-m-d H:i:s')])->
             count();
 
-        if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація в даній рубриці відсутня');
+        //if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація в даній рубриці відсутня');
+        if (empty($count)) return $this->render('noSubcategory');
+
 
         $pagination = new Pagination([
             'defaultPageSize' => 10,
