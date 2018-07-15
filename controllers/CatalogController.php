@@ -42,7 +42,11 @@ class CatalogController extends Controller
 
     public function actionIndex()
     {
-        $result = Category::find()->with('subcategory')->orderBy('name ASC')->all();
+        $result = Category::find()->
+        with(['subcategory' => function ($query) {
+            $query->orderBy('title ASC');
+        }])->
+        orderBy('name ASC')->all();
 
         if(empty($result)) throw  new \yii\web\HttpException(404,'Інформація відсутня');
 
