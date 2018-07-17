@@ -48,6 +48,7 @@ h2 {
 /*** Menu top ***/
 .navbar {
     border-radius: 0;
+    background-color: #84200b;
 }
 .navbar-default .navbar-nav > li > a {
     color: #066cb0;
@@ -115,7 +116,7 @@ h2 {
     padding: 5px 55px;
 }
 .footer {
-    background-color: #337ab7;
+    background-color: #84200b;
     border-top: 1px solid #ddd;
     padding-top: 20px;
     margin-top: 50px;

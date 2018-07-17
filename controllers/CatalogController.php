@@ -3,6 +3,7 @@
 namespace app\controllers;
 use app\models\Area;
 use app\models\Region;
+use app\models\Subcategory;
 use app\modules\admin\model\Payments;
 use Yii;
 use app\models\Post;
@@ -45,8 +46,7 @@ class CatalogController extends Controller
         $result = Category::find()->
         with(['subcategory' => function ($query) {
             $query->orderBy('title ASC');
-        }])->
-        orderBy('name ASC')->all();
+        }])->orderBy('name ASC')->all();
 
         if(empty($result)) throw  new \yii\web\HttpException(404,'Інформація відсутня');
 
@@ -66,7 +66,10 @@ class CatalogController extends Controller
             count();
 
         //if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація в даній рубриці відсутня');
-        if (empty($count)) return $this->render('noSubcategory');
+        if (empty($count)) {
+            $result = Subcategory::find()->where(['subcategory_id' => $subcat_id])->all();
+            return $this->render('noSubcategory', ['result' => $result]);
+        }
 
 
         $pagination = new Pagination([
@@ -173,6 +176,7 @@ class CatalogController extends Controller
             count();
 
         if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація відсутня');
+
 
         $pagination = new Pagination([
             'defaultPageSize' => 10,
