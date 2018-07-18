@@ -7,7 +7,7 @@
 
     $this->params['breadcrumbs'][] = ['label' => $result[0]->category->name, 'url' => '/'];
     $this->params['breadcrumbs'][] = $result[0]->subcategory->title;
-    $this->title = 'Каталог підприємств - '.$result[0]->category->name.' '.$result[0]->subcategory->title;
+$this->title = $result[0]->category->name . ' / ' . $result[0]->subcategory->title . ' - Каталог Панорама';
 
     $this->registerCssFile('@web/css/post.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 ?>
