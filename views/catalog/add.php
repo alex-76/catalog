@@ -7,7 +7,10 @@ use yii\widgets\ActiveForm;
 
 $this->params['breadcrumbs'][] = 'Додати публікацію';
 
-$this->title = 'Додати підприємство, товари та послуги у каталог України';
+$this->title = 'Додати підприємсвтво в Каталог Панорама';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Додати підприємство, компанію, організацію, товар або послугу в Каталог Панорама']);
 
 $this->registerCssFile('@web/css/add.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 

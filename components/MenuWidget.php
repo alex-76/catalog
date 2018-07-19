@@ -31,7 +31,7 @@ class MenuWidget extends Widget
                        $this->html .= "<li>" . \yii\helpers\Html::a($v->name, '/catalog/' .
                                \app\controllers\NewsController::translit(trim($v->name)), [
                                'data-method' => 'POST',
-                           'data-params' => ['area_id' => $v->area_id]])."</li>";
+                               'data-params' => ['area_id' => $v->area_id, 'reg_id' => $val->region_id]]) . "</li>";
                    }
                    $this->html .= "</ul>";
                    $this->html .= "</li>";

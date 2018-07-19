@@ -183,8 +183,12 @@ class CatalogController extends Controller
 
             $where = (!empty($area_id)) ? " AND area.area_id = " . $area_id . "" : '';
 
-            $result = Yii::$app->db->createCommand(
-                "SELECT * FROM region, area WHERE region.region_id = " . $reg_id . "" . $where)->queryAll();
+            $result = (!empty($area_id)) ?
+                Yii::$app->db->
+                createCommand("SELECT * FROM region, area WHERE region.region_id = " . $reg_id . " AND area.area_id = " . $area_id . "")->queryAll() :
+                Yii::$app->db->
+                createCommand("SELECT * FROM region, area WHERE region.region_id = " . $reg_id . "")->queryAll();
+
             return $this->render('noDataLocation', [
                 'result' => $result
             ]);
@@ -208,9 +212,6 @@ class CatalogController extends Controller
             offset($pagination->offset)->
             limit($pagination->limit)->
             all();
-
-        print_r($result);
-        die();
 
         return $this->render('filter',[
             'result' => $result,
