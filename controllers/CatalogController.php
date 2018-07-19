@@ -165,10 +165,10 @@ class CatalogController extends Controller
         $reg_id = Yii::$app->request->post('reg_id', null);
         $area_id = Yii::$app->request->post('area_id', null);
 
-        if($reg_id!== null) {
+        if ($area_id == null) {
             $arr = ['region_id' => $reg_id,'access' => '1'];
         } else {
-            $arr = ['area_id' => $area_id,'access' => '1'];
+            $arr = ['region_id' => $reg_id, 'area_id' => $area_id, 'access' => '1'];
         }
 
         $count = Post::find()->
@@ -180,7 +180,14 @@ class CatalogController extends Controller
 
         //if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація відсутня');
         if (empty($count)) {
-            return $this->render('noDataLocation');
+
+            $where = (!empty($area_id)) ? " AND area.area_id = " . $area_id . "" : '';
+
+            $result = Yii::$app->db->createCommand(
+                "SELECT * FROM region, area WHERE region.region_id = " . $reg_id . "" . $where)->queryAll();
+            return $this->render('noDataLocation', [
+                'result' => $result
+            ]);
         }
 
 
@@ -201,6 +208,9 @@ class CatalogController extends Controller
             offset($pagination->offset)->
             limit($pagination->limit)->
             all();
+
+        print_r($result);
+        die();
 
         return $this->render('filter',[
             'result' => $result,
