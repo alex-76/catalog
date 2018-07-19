@@ -8,11 +8,15 @@
     $this->params['breadcrumbs'][] = ['label' => $result[0]->category->name, 'url' => '/'];
     $this->params['breadcrumbs'][] = $result[0]->subcategory->title;
 $this->title = $result[0]->category->name . ' / ' . $result[0]->subcategory->title . ' - Каталог Панорама';
+$this->registerMetaTag([
+    'name' => 'description',
+    'content' => 'Перелік підприємств, компаній в сфері ' .
+        $result[0]->category->name . ' / ' . $result[0]->subcategory->title . ': всі регіони, області та райони України']);
 
     $this->registerCssFile('@web/css/post.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 ?>
 
-    <div class="header-h3">Підприємства: <b><?=$result[0]->category->name. ' / ' .$result[0]->subcategory->title  ?></b></div>
+<h1>Підприємства: <b><?= $result[0]->category->name . ' / ' . $result[0]->subcategory->title ?></b></h1>
 
     <?= Breadcrumbs::widget([
         'homeLink' => ['label' => 'Головна', 'url' => '/'],

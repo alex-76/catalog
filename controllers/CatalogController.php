@@ -68,7 +68,10 @@ class CatalogController extends Controller
         //if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація в даній рубриці відсутня');
         if (empty($count)) {
             $result = Subcategory::find()->where(['subcategory_id' => $subcat_id])->all();
-            return $this->render('noSubcategory', ['result' => $result]);
+            return $this->render('noDataSubcategory', [
+                'result' => $result,
+                'massage' => 'Виберіть іншу підкатегорію'
+            ]);
         }
 
 
@@ -175,7 +178,10 @@ class CatalogController extends Controller
             andWhere(['<=', 'date_publication', Yii::$app->formatter->asDate(time()+10800, 'php:Y-m-d H:i:s')])->
             count();
 
-        if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація відсутня');
+        //if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація відсутня');
+        if (empty($count)) {
+            return $this->render('noDataLocation');
+        }
 
 
         $pagination = new Pagination([
