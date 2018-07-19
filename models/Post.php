@@ -5,6 +5,8 @@ namespace app\models;
 use Yii;
 use app\modules\admin\model\Payments;
 
+//use app\components\Translit;
+
 /**
  * This is the model class for table "post".
  *
@@ -39,7 +41,8 @@ class Post extends \yii\db\ActiveRecord
         return [
             'image' => [
                 'class' => 'rico\yii2images\behaviors\ImageBehave',
-            ]
+            ],
+            //'class' => Translit::className()
         ];
     }
 
