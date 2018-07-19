@@ -75,6 +75,7 @@ $config = [
                 'news/index' => 'news/index',
                 'news/<news_id:\d+>/<alias:[\w-]+>' => 'news/show',
                 'add' => 'catalog/add',
+                'catalog/<alias:[\w-]+>' => 'catalog/filter',
 
             ],
         ],

@@ -22,13 +22,15 @@ class MenuWidget extends Widget
 
                if(!empty($area))
                {
-                   $this->html .= "<li>".\yii\helpers\Html::a($val->name_region,'/catalog/filter/',[
-                           'data-method' => 'GET',
+                   $this->html .= "<li>" . \yii\helpers\Html::a($val->name_region, '/catalog/' .
+                           \app\controllers\NewsController::translit(trim($val->name_region)), [
+                           'data-method' => 'POST',
                            'data-params' => ['reg_id' => $val->region_id]]);
                    $this->html .= "<ul class=\"children-items\">";
                    foreach ($area as $v) {
-                       $this->html .="<li>".\yii\helpers\Html::a($v->name,'/catalog/filter/',[
-                           'data-method' => 'GET',
+                       $this->html .= "<li>" . \yii\helpers\Html::a($v->name, '/catalog/' .
+                               \app\controllers\NewsController::translit(trim($v->name)), [
+                               'data-method' => 'POST',
                            'data-params' => ['area_id' => $v->area_id]])."</li>";
                    }
                    $this->html .= "</ul>";

@@ -27,21 +27,21 @@ $this->registerCssFile('@web/css/main.css', ['depends' => [yii\bootstrap\Bootstr
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
         <div class="item active">
-            <img src="/images/1.jpg" alt="" class="img-responsive">
+            <img src="/images/1.jpg" alt="slide 1" class="img-responsive">
             <div class="carousel-caption">
 
                 <p></p>
             </div>
         </div>
         <div class="item">
-            <img src="/images/2.jpg" alt="" class="img-responsive">
+            <img src="/images/2.jpg" alt="slide 2" class="img-responsive">
             <div class="carousel-caption">
 
                 <p></p>
             </div>
         </div>
         <div class="item">
-            <img src="/images/3.jpg" alt="" class="img-responsive">
+            <img src="/images/3.jpg" alt="slide 3" class="img-responsive">
             <div class="carousel-caption">
 
                 <p></p>

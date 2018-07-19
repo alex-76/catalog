@@ -8,7 +8,7 @@ use yii\widgets\ActiveForm;
 
 $this->params['breadcrumbs'][] = ['label' => 'Список новин', 'url'=> '/news/index'];
 $this->params['breadcrumbs'][] =  'Губернатор завітав до селещної ради';
-$this->title = 'Список останніх новин';
+$this->title = $result[0]->title_news;
 
 $this->registerCssFile('@web/css/news-show.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 $this->registerMetaTag(['name' => 'keywords', 'content' => $result[0]->meta_keyword]);

@@ -162,8 +162,8 @@ class CatalogController extends Controller
     public function actionFilter() {
 
         $arr = array();
-        $reg_id  = Yii::$app->request->get('reg_id', null);
-        $area_id = Yii::$app->request->get('area_id', null);
+        $reg_id = Yii::$app->request->post('reg_id', null);
+        $area_id = Yii::$app->request->post('area_id', null);
 
         if($reg_id!== null) {
             $arr = ['region_id' => $reg_id,'access' => '1'];
