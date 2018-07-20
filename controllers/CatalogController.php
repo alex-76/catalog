@@ -162,8 +162,8 @@ class CatalogController extends Controller
     public function actionFilter() {
 
         $arr = array();
-        $reg_id = Yii::$app->request->post('reg_id', null);
-        $area_id = Yii::$app->request->post('area_id', null);
+        $reg_id = Yii::$app->request->get('reg_id', null);
+        $area_id = Yii::$app->request->get('area_id', null);
 
         if ($area_id == null) {
             $arr = ['region_id' => $reg_id,'access' => '1'];
@@ -187,7 +187,7 @@ class CatalogController extends Controller
                 Yii::$app->db->
                 createCommand("SELECT * FROM region, area WHERE region.region_id = " . $reg_id . " AND area.area_id = " . $area_id . "")->queryAll() :
                 Yii::$app->db->
-                createCommand("SELECT * FROM region, area WHERE region.region_id = " . $reg_id . "")->queryAll();
+                createCommand("SELECT * FROM region WHERE region.region_id = " . $reg_id . "")->queryAll();
 
             return $this->render('noDataLocation', [
                 'result' => $result
@@ -216,6 +216,7 @@ class CatalogController extends Controller
         return $this->render('filter',[
             'result' => $result,
             'pagination' => $pagination,
+            'area_id' => (!empty($area_id)) ? true : false
         ]);
 
     }

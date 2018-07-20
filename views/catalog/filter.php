@@ -4,22 +4,21 @@
     use yii\widgets\Breadcrumbs;
     use yii\helpers\Html;
 
-
-    $this->params['breadcrumbs'][] = ['label' => $result[0]->region->name_region];
-    $this->params['breadcrumbs'][] = $result[0]->area->name;
-$this->title = 'Підприємства - ' . $result[0]->region->name_region . ((sizeof($result) == 1) ? ' / ' . $result[0]->area->name : '') . ': всі сфери діяльності';
+$this->params['breadcrumbs'][] = ['label' => $result[0]->region->name_region];
+$this->params['breadcrumbs'][] = $result[0]->area->name;
+$this->title = 'Підприємства - ' . $result[0]->region->name_region . (($area_id) ? ' / ' . $result[0]->area->name : '') . ': всі сфери діяльності';
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => 'Всі підприємтсва, фірми, установи - ' . $result[0]->region->name_region . ((sizeof($result) == 1) ? ' / ' . $result[0]->area->name : '') .
+    'content' => 'Всі підприємтсва, фірми, установи - ' . $result[0]->region->name_region . (($area_id) ? ' / ' . $result[0]->area->name : '') .
         ': контактні дані, місцезнаходження, зображення на карті, повний опис діяльності та докладний перелік послуг.']);
 
     $this->registerCssFile('@web/css/filter.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 ?>
 
 <div class="header-h3">Підприємства: <b><?php echo $result[0]->region->name_region .
-            ((sizeof($result) == 1) ? ' / ' . $result[0]->area->name : ''); ?></b></div>
+            (($area_id) ? ' / ' . $result[0]->area->name : ''); ?></b></div>
 
-    <?= Breadcrumbs::widget([
+<?= Breadcrumbs::widget([
         'homeLink' => ['label' => 'Головна', 'url' => '/'],
         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
     ]) ?>

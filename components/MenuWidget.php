@@ -4,6 +4,7 @@ namespace app\components;
 
 use yii\base\Widget;
 use app\models\Region;
+use yii\helpers\Html;
 
 
 class MenuWidget extends Widget
@@ -22,16 +23,14 @@ class MenuWidget extends Widget
 
                if(!empty($area))
                {
-                   $this->html .= "<li>" . \yii\helpers\Html::a($val->name_region, '/catalog/' .
+                   $this->html .= "<li>" . Html::a($val->name_region, '/catalog/' . $val->region_id . '/' .
                            \app\controllers\NewsController::translit(trim($val->name_region)), [
-                           'data-method' => 'POST',
-                           'data-params' => ['reg_id' => $val->region_id]]);
+                           'data-method' => 'GET']);
                    $this->html .= "<ul class=\"children-items\">";
                    foreach ($area as $v) {
-                       $this->html .= "<li>" . \yii\helpers\Html::a($v->name, '/catalog/' .
+                       $this->html .= "<li>" . Html::a($v->name, '/catalog/' . $val->region_id . '/' . $v->area_id . '/' .
                                \app\controllers\NewsController::translit(trim($v->name)), [
-                               'data-method' => 'POST',
-                               'data-params' => ['area_id' => $v->area_id, 'reg_id' => $val->region_id]]) . "</li>";
+                               'data-method' => 'GET']) . "</li>";
                    }
                    $this->html .= "</ul>";
                    $this->html .= "</li>";
