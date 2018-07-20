@@ -15,8 +15,8 @@ $this->registerMetaTag([
     $this->registerCssFile('@web/css/filter.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 ?>
 
-<div class="header-h3">Підприємства: <b><?php echo $result[0]->region->name_region .
-            (($area_id) ? ' / ' . $result[0]->area->name : ''); ?></b></div>
+<h1>Підприємства: <b><?php echo $result[0]->region->name_region .
+            (($area_id) ? ' / ' . $result[0]->area->name : ''); ?></b></h1>
 
 <?= Breadcrumbs::widget([
         'homeLink' => ['label' => 'Головна', 'url' => '/'],
