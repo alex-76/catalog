@@ -181,8 +181,6 @@ class CatalogController extends Controller
         //if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація відсутня');
         if (empty($count)) {
 
-            $where = (!empty($area_id)) ? " AND area.area_id = " . $area_id . "" : '';
-
             $result = (!empty($area_id)) ?
                 Yii::$app->db->
                 createCommand("SELECT * FROM region, area WHERE region.region_id = " . $reg_id . " AND area.area_id = " . $area_id . "")->queryAll() :
