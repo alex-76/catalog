@@ -165,9 +165,6 @@ class CatalogController extends Controller
         $reg_id = Yii::$app->request->get('reg_id', null);
         $area_id = Yii::$app->request->get('area_id', null);
 
-        print $reg_id;
-        print $area_id;
-
         if ($area_id == null) {
             $arr = ['region_id' => $reg_id,'access' => '1'];
         } else {

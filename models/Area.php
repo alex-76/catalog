@@ -45,6 +45,7 @@ class Area extends \yii\db\ActiveRecord
         ];
     }
 
+
     /*
      * @get Region ID
      */
