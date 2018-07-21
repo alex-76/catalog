@@ -1,12 +1,12 @@
 <?php
 
-$name_area = (!empty($result[0]['name'])) ? $result[0]['name'] : '';
+$name_area = (!empty($area_id)) ? $result[0]['name'] : '';
 
-$this->title = 'Перелік підприємств - ' . $result[0]['name_region'] . ' - ' . $name_area . ' всі види діяльності  - Каталог Панорама';
+$this->title = 'Перелік підприємств - ' . $result[0]['region']['name_region'] . ' - ' . $name_area . ' всі види діяльності  - Каталог Панорама';
 $this->registerMetaTag([
     'name' => 'description',
-    'content' => 'Діючі підприємства, установи, організації, компанії, фірми всіх форм власності  
-    ' . $result[0]['name_region'] . ' - ' . $name_area . ' з повною інформацією про діяльність']);
+    'content' => 'Діючі підприємства, установи, організації, компанії, фірми всіх форм власності
+    ' . $result[0]['region']['name_region'] . ' - ' . $name_area . ' з повною інформацією про діяльність']);
 
 ?>
 <div class="site-error">
