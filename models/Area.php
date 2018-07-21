@@ -44,4 +44,9 @@ class Area extends \yii\db\ActiveRecord
             'region_id' => 'Region ID',
         ];
     }
+
+    public function getRegion()
+    {
+        return $this->hasOne(Region::className(), ['region_id' => 'region_id']);
+    }
 }
