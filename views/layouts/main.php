@@ -44,8 +44,9 @@ AppAsset::register($this);
 <?php
 NavBar::begin([
     'innerContainerOptions' => ['class' => 'container-fluid menu-top'],
-    'brandLabel' => '<img src="/images/logo.png" alt="Каталог Панорама"/>',
-    'brandUrl' => 'javascript:(0)',//Yii::$app->homeUrl,
+    //'brandLabel' => '<img src="/images/logo.png" alt="Каталог Панорама"/>',
+    'brandUrl' => null,
+    'brandImage' => '/images/logo.png',
     'options' => [
         'class' => 'navbar-inverse',
     ],
