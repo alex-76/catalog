@@ -78,9 +78,9 @@ class CatalogController extends Controller
         $pagination = new Pagination([
             'defaultPageSize' => 1,
             'totalCount' => $count,
+            'forcePageParam' => false,
+            'pageSizeParam' => false,
         ]);
-        $pagination->forcePageParam = false;
-        $pagination->pageSizeParam = false;
 
 
         $result = Post::find()->

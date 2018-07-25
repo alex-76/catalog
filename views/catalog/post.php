@@ -66,7 +66,6 @@ $this->registerMetaTag([
         'pagination' => $pagination,
         'maxButtonCount' => 5,
         'disableCurrentPageButton' => true,
-
         'linkOptions' => [
             'rel' => 'canonical',
         ],

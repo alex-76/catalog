@@ -69,17 +69,30 @@ $config = [
             'showScriptName' => false,
             //'suffix' => '.html',
             'rules' => [
+
+                // post
+                'post/<subcat_id:\d+>/page/<page:\d+>' => 'catalog/post',
                 'post/<subcat_id:\d+>' => 'catalog/post',
+
                 'show/<post_id:\d+>' => 'catalog/show',
+
+                // any actions
                 '<action:\w+>' => 'catalog/<action>',
+
+                // news
                 'news/index' => 'news/index',
                 'news/<news_id:\d+>/<alias:[\w-]+>' => 'news/show',
+
+                //filters
                 'catalog/<reg_id:\d+>/<alias:[\w-]+>' => 'catalog/filter',
                 'catalog/<reg_id:\d+>/<area_id:\d+>/<alias:[\w-]+>' => 'catalog/filter',
-                //'post/<subcat_id:\d+>/<page:\d+>' => 'catalog/post'
 
-                '<controller:\w+>/page/<page:\d+>' => '<controller>/index',
-                '<controller:\w+>' => '<controller>/index',
+
+//                [
+//                    'pattern'=>'<action:\w+>',
+//                    'route' => 'catalog/<action>',
+//                    'suffix' => '.html',
+//                ],
 
             ],
         ],
