@@ -194,8 +194,10 @@ class CatalogController extends Controller
 
 
         $pagination = new Pagination([
-            'defaultPageSize' => 10,
+            'defaultPageSize' => 1,
             'totalCount' => $count,
+            'forcePageParam' => false,
+            'pageSizeParam' => false,
         ]);
 
 

@@ -5,7 +5,7 @@ namespace app\components;
 use yii\base\Widget;
 use app\models\Region;
 use yii\helpers\Html;
-
+use Yii;
 
 class MenuWidget extends Widget
 {
@@ -23,14 +23,17 @@ class MenuWidget extends Widget
 
                if(!empty($area))
                {
+
                    $this->html .= "<li>" . Html::a($val->name_region, '/catalog/' . $val->region_id . '/' .
-                           \app\controllers\NewsController::translit(trim($val->name_region)), [
-                           'data-method' => 'GET']);
+                           Yii::$app->translit->translit(trim($val->name_region)),
+                           ['onclick' => 'window.location.href = "/catalog/' . $val->region_id . '/' . Yii::$app->translit->translit(trim($val->name_region)) . '"']);
+
                    $this->html .= "<ul class=\"children-items\">";
                    foreach ($area as $v) {
                        $this->html .= "<li>" . Html::a($v->name, '/catalog/' . $val->region_id . '/' . $v->area_id . '/' .
-                               \app\controllers\NewsController::translit(trim($v->name)), [
-                               'data-method' => 'GET']) . "</li>";
+                               Yii::$app->translit->translit(trim($v->name)), [
+                               'onclick' => 'window.location.href = "/catalog/' . $val->region_id . '/' . $v->area_id . '/' .
+                                   Yii::$app->translit->translit(trim($v->name)) . '"']) . "</li>";
                    }
                    $this->html .= "</ul>";
                    $this->html .= "</li>";

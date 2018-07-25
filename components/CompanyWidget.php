@@ -27,7 +27,7 @@ class CompanyWidget extends Widget
         $this->html.= '<ul class="list-unstyled last-company">';
 
         foreach ($model as $val) {
-            $this->html.= '<li><a href="/show/'.$val->post_id.'">'.$val->name_company.'</a></li>';
+            $this->html .= '<li><a href="/show/' . $val->post_id . '/' . Yii::$app->translit->translit($val->name_company) . '">' . $val->name_company . '</a></li>';
         }
         $this->html.= '</ul>';
 

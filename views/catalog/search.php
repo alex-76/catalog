@@ -60,7 +60,8 @@
                 </div>
                 <div class="col-md-10">
                     <div class="title-main">
-                        <a target="_blank" class="link-subcat" href="/show/<?=$val->post_id; ?>">
+                        <a target="_blank" class="link-subcat"
+                           href="/show/<?= $val->post_id; ?>/<?= Yii::$app->translit->translit($val->name_company); ?>">
                             <?=preg_replace('~' . preg_quote($q) . '~iu', '<span style="color:#de0810">$0</span>', $val->name_company); ?>
                         </a>
                     </div>

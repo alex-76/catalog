@@ -3,6 +3,7 @@
     use yii\widgets\LinkPager;
     use yii\widgets\Breadcrumbs;
     use yii\helpers\Html;
+use yii\widgets\Pjax;
 
 $this->params['breadcrumbs'][] = ['label' => $result[0]->region->name_region];
 $this->params['breadcrumbs'][] = $result[0]->area->name;
@@ -22,6 +23,11 @@ $this->registerMetaTag([
         'homeLink' => ['label' => 'Головна', 'url' => '/'],
         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
     ]) ?>
+
+<?php Pjax::begin([
+    'enablePushState' => false, // to disable push state
+    'enableReplaceState' => false // to disable replace state
+]); ?>
 
 <?php foreach ($result as $val): ?>
 
@@ -49,7 +55,8 @@ $this->registerMetaTag([
                 </div>
                 <div class="col-md-10">
                     <div class="title-main">
-                        <a class="link-subcat" href="/show/<?=$val->post_id; ?>"> <?= $val->name_company; ?></a>
+                        <a class="link-subcat"
+                           href="/show/<?= $val->post_id; ?>/<?= Yii::$app->translit->translit($val->name_company); ?>"> <?= $val->name_company; ?></a>
                     </div>
                     <small class="data-publication"><?= date('d.m.Y',strtotime($val->date_publication)); ?> | <?=$result[0]->category->name ?> | <?=$result[0]->subcategory->title  ?></small>
                     <div class="discription"><?= \yii\helpers\StringHelper::truncate($val->description,130,'...') ?></div>
@@ -71,7 +78,7 @@ $this->registerMetaTag([
     ]) ?>
 </div>
 
-
+<?php Pjax::end(); ?>
 
 
 

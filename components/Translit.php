@@ -10,23 +10,21 @@ class Translit extends Behavior
 {
     public function translit($str, $fix_umlauts = false)
     {
-
-        // Установить опции и кодировку регулярных выражений
         mb_regex_set_options('pd');
         mb_internal_encoding('UTF-8');
 
-        // Привести строку к UTF-8
+        $arr = array("/", "«", "»", "№");
+        $str = str_replace($arr, "", $str);
+
         if (strtolower(mb_detect_encoding($str,
                 'utf-8, windows-1251')) == 'windows-1251'
         ) {
             $str = mb_convert_encoding($str, 'utf-8', 'windows-1251');
         }
 
-        // Регулярки для удобства
         $regexp1 = '(?=[A-Z0-9А-Я])';
         $regexp2 = '(?<=[A-Z0-9А-Я])';
 
-        // Массивы для замены заглавных букв, идущих последовательно
         $rus = array(
             '/(Ё' . $regexp1 . ')|(' . $regexp2 . 'Ё)/u',
             '/(Ж' . $regexp1 . ')|(' . $regexp2 . 'Ж)/u',
@@ -41,7 +39,6 @@ class Translit extends Behavior
             'YO', 'ZH', 'CH', 'SH', 'SCH', 'YU', 'YA'
         );
 
-        // Заменить заглавные буквы, идущие последовательно
         $str = preg_replace($rus, $eng, $str);
 
         // Массивы для замены одиночных заглавных и строчных букв
@@ -73,12 +70,11 @@ class Translit extends Behavior
             'I', '', 'E', 'Yu', 'Ya'
         );
 
-        // Заменить оставшиеся заглавные и строчные буквы
         $str = preg_replace($rus, $eng, $str);
         $str = str_replace(['-', '–', '—', ',', ':', '\''], "", $str);
         $str = str_replace(" ", "-", $str); // заменяем пробелы знаком минус
 
-        // Исправление умляутов и других надсимвольных значков
+
         if ($fix_umlauts) {
             $str = preg_replace('/&(.)(tilde|uml);/', "$1",
                 mb_convert_encoding($str, 'HTML-ENTITIES', 'utf-8'));
