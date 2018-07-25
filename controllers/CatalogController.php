@@ -82,7 +82,6 @@ class CatalogController extends Controller
             'pageSizeParam' => false,
         ]);
 
-
         $result = Post::find()->
             joinWith('payments')->
             where(['post.subcategory_id' => $subcat_id,'post.access' => '1'])->

@@ -14,8 +14,6 @@ $this->registerMetaTag([
 $this->registerCssFile('@web/css/main.css', ['depends' => [yii\bootstrap\BootstrapAsset::className()]]);
 ?>
 
-
-
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -60,42 +58,40 @@ $this->registerCssFile('@web/css/main.css', ['depends' => [yii\bootstrap\Bootstr
     </a>
 </div>
 
+<h1>Каталог підприємств</h1>
+<div class="row" style="background-color: #f5f5f5">
+    <?php
+    if (!empty($result)) {
+        $i = 1;
+        foreach ($result as $val) {
+            $subcategory = $val->subcategory;
+            if (!empty($subcategory)) {
 
+                echo '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-6" >';
+                echo '<div class="header-h3 head-catalog">' . mb_strtoupper($val->name, 'UTF-8') . '</div>';
+                echo '<ul class="list-unstyled list-subcategory">';
 
-
-
-        <h1>Каталог підприємств</h1>
-        <div class="row" style="background-color: #f5f5f5">
-        <?php
-            if(!empty($result)) {
-                $i = 1;
-                foreach ($result as $val) {
-                    $subcategory = $val->subcategory;
-                    if(!empty($subcategory)) {
-
-                        echo '<div class="col-xs-12 col-sm-4 col-md-4 col-lg-6" >';
-                        echo '<div class="header-h3 head-catalog">'.mb_strtoupper($val->name,'UTF-8').'</div>';
-                        echo '<ul class="list-unstyled list-subcategory">';
-
-                        if(!empty($subcategory)) {
-                            foreach ($subcategory as $subcat) {
-                                echo '<li><a href="post/'.$subcat->subcategory_id.'">'.$subcat->title.'</a></li>';
-                            }
-                        }
-                        echo '</ul></div>';
-
-                        if($i % 2 == 0 ) {
-                            echo '<div class="clearfix visible-lg"></div>';
-                            echo '<div class="clearfix visible-md"></div>';
-                            echo '<div class="clearfix visible-sm"></div>';
-                        }
-                        $i++;
+                if (!empty($subcategory)) {
+                    foreach ($subcategory as $subcat) {
+                        echo '<li>
+                        <a href="post/' . $subcat->subcategory_id . '/' . Yii::$app->translit->translit($subcat->title) . '">' . $subcat->title . '</a>
+                        </li>';
                     }
                 }
-            }
+                echo '</ul></div>';
 
-        ?>
-        </div>
+                if ($i % 2 == 0) {
+                    echo '<div class="clearfix visible-lg"></div>';
+                    echo '<div class="clearfix visible-md"></div>';
+                    echo '<div class="clearfix visible-sm"></div>';
+                }
+                $i++;
+            }
+        }
+    }
+
+    ?>
+</div>
 
 
 

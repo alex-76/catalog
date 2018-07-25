@@ -71,10 +71,11 @@ $config = [
             'rules' => [
 
                 // post
+                'post/<subcat_id:\d+>/<alias:[\w-]+>' => 'catalog/post',
                 'post/<subcat_id:\d+>/page/<page:\d+>' => 'catalog/post',
                 'post/<subcat_id:\d+>' => 'catalog/post',
 
-                'show/<post_id:\d+>' => 'catalog/show',
+                'show/<post_id:\d+>/<alias:[\w-]+>' => 'catalog/show',
 
                 // any actions
                 '<action:\w+>' => 'catalog/<action>',
@@ -89,6 +90,7 @@ $config = [
 
             ],
         ],
+        'translit' => 'app\components\Translit',
 
     ],
     'controllerMap' => [
