@@ -65,6 +65,8 @@ $this->registerMetaTag([
     <?= LinkPager::widget([
         'pagination' => $pagination,
         'maxButtonCount' => 5,
+        'disableCurrentPageButton' => true,
+
         'linkOptions' => [
             'rel' => 'canonical',
         ],

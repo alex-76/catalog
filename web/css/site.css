@@ -218,6 +218,8 @@ li .logout, li .logout:hover {
     font-size: 20px;
     color: #6e6e6e;
 }
+
+.pagination > .disabled > span,
 .pagination > .active > a,
 .pagination > .active > a:hover,
 .pagination > .active > span:hover,

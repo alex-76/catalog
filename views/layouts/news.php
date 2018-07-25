@@ -83,7 +83,8 @@ NavBar::end();
         <div class="col-md-9 lf-block">
             <div class="row">
                 <div class="col-md-3">
-                    <p><a href="/add" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"></span> Додати компанію</a></p>
+                    <a href="/add" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"></span> Додати
+                        компанію</a>
                 </div>
                 <div class="col-md-9">
                     <form class="well form-inline" id="form-search" action="<?=yii\helpers\Url::to(['catalog/search']) ?>" method="get">

@@ -74,9 +74,12 @@ $config = [
                 '<action:\w+>' => 'catalog/<action>',
                 'news/index' => 'news/index',
                 'news/<news_id:\d+>/<alias:[\w-]+>' => 'news/show',
-                'add' => 'catalog/add',
                 'catalog/<reg_id:\d+>/<alias:[\w-]+>' => 'catalog/filter',
                 'catalog/<reg_id:\d+>/<area_id:\d+>/<alias:[\w-]+>' => 'catalog/filter',
+                //'post/<subcat_id:\d+>/<page:\d+>' => 'catalog/post'
+
+                '<controller:\w+>/page/<page:\d+>' => '<controller>/index',
+                '<controller:\w+>' => '<controller>/index',
 
             ],
         ],

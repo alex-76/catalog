@@ -81,7 +81,7 @@ NavBar::end();
 
     <div class="row">
         <div class="col-md-3 lf-block">
-            <p><a href="/add" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"></span> Додати компанію</a></p>
+            <a href="/add" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-plus"></span> Додати компанію</a>
 
             <div class="header-h3"><span class="glyphicon glyphicon-pushpin"></span> Нові підприємства</div>
             <?php echo CompanyWidget::widget(); ?>
