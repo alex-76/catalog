@@ -87,13 +87,6 @@ $config = [
                 'catalog/<reg_id:\d+>/<alias:[\w-]+>' => 'catalog/filter',
                 'catalog/<reg_id:\d+>/<area_id:\d+>/<alias:[\w-]+>' => 'catalog/filter',
 
-
-//                [
-//                    'pattern'=>'<action:\w+>',
-//                    'route' => 'catalog/<action>',
-//                    'suffix' => '.html',
-//                ],
-
             ],
         ],
 

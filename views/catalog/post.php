@@ -4,6 +4,8 @@
     use yii\widgets\Breadcrumbs;
     use yii\helpers\Html;
 
+use yii\widgets\Pjax;
+
 
     $this->params['breadcrumbs'][] = ['label' => $result[0]->category->name, 'url' => '/'];
     $this->params['breadcrumbs'][] = $result[0]->subcategory->title;
@@ -22,6 +24,8 @@ $this->registerMetaTag([
         'homeLink' => ['label' => 'Головна', 'url' => '/'],
         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
     ]) ?>
+
+<?php Pjax::begin(); ?>
 
 <?php foreach ($result as $val): ?>
 
@@ -71,6 +75,8 @@ $this->registerMetaTag([
         ],
     ]) ?>
 </div>
+
+<?php Pjax::end(); ?>
 
 
 
