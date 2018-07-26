@@ -4,6 +4,7 @@
 use yii\helpers\Url;
 use yii\widgets\LinkPager;
 use yii\widgets\Breadcrumbs;
+use yii\widgets\Pjax;
 
 $this->params['breadcrumbs'][] =  'Новини';
 
@@ -23,6 +24,10 @@ $this->registerCssFile('@web/css/news.css', ['depends' => [yii\bootstrap\Bootstr
     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
 ]) ?>
 
+<?php Pjax::begin([
+    'enablePushState' => false, // to disable push state
+    'enableReplaceState' => false // to disable replace state
+]); ?>
 
 <?php foreach ($result as $val): ?>
 
@@ -67,6 +72,6 @@ $this->registerCssFile('@web/css/news.css', ['depends' => [yii\bootstrap\Bootstr
     ]) ?>
 </div>
 
-
+<?php Pjax::end(); ?>
 
 

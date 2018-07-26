@@ -1,13 +1,13 @@
 <?php
 
-    use yii\widgets\LinkPager;
-    use yii\widgets\Breadcrumbs;
-    use yii\helpers\Html;
+use yii\widgets\LinkPager;
+use yii\widgets\Breadcrumbs;
+use yii\helpers\Html;
 use yii\widgets\Pjax;
 
 
-    $this->params['breadcrumbs'][] = ['label' => $result[0]->category->name, 'url' => '/'];
-    $this->params['breadcrumbs'][] = $result[0]->subcategory->title;
+$this->params['breadcrumbs'][] = ['label' => $result[0]->category->name, 'url' => '/'];
+$this->params['breadcrumbs'][] = $result[0]->subcategory->title;
 $this->title = $result[0]->category->name . ' / ' . $result[0]->subcategory->title . ' - Каталог Панорама';
 $this->registerMetaTag([
     'name' => 'description',
