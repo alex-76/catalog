@@ -23,7 +23,7 @@ class NewsController extends \yii\web\Controller
         if(empty($count)) throw  new \yii\web\HttpException(404,'Інформація відсутня');
 
         $pagination = new Pagination([
-            'defaultPageSize' => 1,
+            'defaultPageSize' => 10,
             'totalCount' => $count,
         ]);
 

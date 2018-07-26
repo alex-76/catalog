@@ -6,7 +6,7 @@ use yii\widgets\Breadcrumbs;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-$this->params['breadcrumbs'][] = ['label' => 'Список новин', 'url'=> '/news/index'];
+$this->params['breadcrumbs'][] = ['label' => 'Список новин', 'url' => '/news'];
 $this->params['breadcrumbs'][] =  'Губернатор завітав до селещної ради';
 $this->title = $result[0]->title_news;
 
