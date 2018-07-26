@@ -32,7 +32,7 @@ $this->registerCssFile('@web/css/news.css', ['depends' => [yii\bootstrap\Bootstr
         </div>
         <div class="col-md-9">
             <div class="title-main">
-                <a href="<?=Url::to(['news/'.$val->news_id.'/'.\app\controllers\NewsController::translit($val->meta_keyword)])?>"><?= $val->name_news; ?></a>
+                <a href="<?= Url::to(['news/' . $val->news_id . '/' . Yii::$app->translit->translit($val->meta_keyword)]) ?>"><?= $val->name_news; ?></a>
             </div>
             <p class="posted-on">
                 <i>Автор</i> <?=$val->author ?>

@@ -41,6 +41,9 @@ class CatalogController extends Controller
         ];
     }
 
+    /*
+     * Main page
+     */
     public function actionIndex()
     {
         $result = Category::find()->
@@ -54,6 +57,9 @@ class CatalogController extends Controller
 
     }
 
+    /*
+     * Show list company of subcategory
+     */
     public function actionPost() {
 
         $subcat_id = Yii::$app->request->get('subcat_id');
@@ -76,7 +82,7 @@ class CatalogController extends Controller
 
 
         $pagination = new Pagination([
-            'defaultPageSize' => 1,
+            'defaultPageSize' => 7,
             'totalCount' => $count,
             'forcePageParam' => false,
             'pageSizeParam' => false,
@@ -99,6 +105,9 @@ class CatalogController extends Controller
         ]);
     }
 
+    /*
+     * Show selected company
+     */
     public function actionShow() {
 
         $post_id = Yii::$app->request->get('post_id');
@@ -126,6 +135,9 @@ class CatalogController extends Controller
         ]);
     }
 
+    /*
+     * Add company in service
+     */
     public function actionAdd(){
 
         $post = new Post();
@@ -160,6 +172,9 @@ class CatalogController extends Controller
 
     }
 
+    /*
+     * Filters | regions | areas
+     */
     public function actionFilter() {
 
         $arr = array();
@@ -194,7 +209,7 @@ class CatalogController extends Controller
 
 
         $pagination = new Pagination([
-            'defaultPageSize' => 1,
+            'defaultPageSize' => 5,
             'totalCount' => $count,
             'forcePageParam' => false,
             'pageSizeParam' => false,
@@ -221,11 +236,17 @@ class CatalogController extends Controller
 
     }
 
+    /*
+     * Show plan
+     */
     public function actionPlan() {
 
         return $this->render('plan');
     }
 
+    /*
+     * Search company.
+     */
     public function actionSearch() {
 
         $q  = Yii::$app->request->get('keyword',null);
@@ -297,8 +318,6 @@ class CatalogController extends Controller
 
     /**
      * Login action.
-     *
-     * @return Response|string
      */
     public function actionLogin()
     {
@@ -321,7 +340,6 @@ class CatalogController extends Controller
     /**
      * Logout action.
      *
-     * @return Response
      */
     public function actionLogout()
     {
@@ -332,8 +350,6 @@ class CatalogController extends Controller
 
     /**
      * Displays contact page.
-     *
-     * @return Response|string
      */
     public function actionContact()
     {
@@ -350,8 +366,6 @@ class CatalogController extends Controller
 
     /**
      * Displays about page.
-     *
-     * @return string
      */
     public function actionAbout()
     {

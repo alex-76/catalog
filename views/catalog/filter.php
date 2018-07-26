@@ -55,8 +55,12 @@ $this->registerMetaTag([
                 </div>
                 <div class="col-md-10">
                     <div class="title-main">
-                        <a class="link-subcat"
-                           href="/show/<?= $val->post_id; ?>/<?= Yii::$app->translit->translit($val->name_company); ?>"> <?= $val->name_company; ?></a>
+                        <?= Html::a('' . $val->name_company . '', '/show/' . $val->post_id . '/' . Yii::$app->translit->translit($val->name_company) . '',
+                            [
+                                'target' => '_blank',
+                                'class' => 'link-subcat',
+                            ]); ?>
+
                     </div>
                     <small class="data-publication"><?= date('d.m.Y',strtotime($val->date_publication)); ?> | <?=$result[0]->category->name ?> | <?=$result[0]->subcategory->title  ?></small>
                     <div class="discription"><?= \yii\helpers\StringHelper::truncate($val->description,130,'...') ?></div>

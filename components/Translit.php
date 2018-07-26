@@ -13,7 +13,7 @@ class Translit extends Behavior
         mb_regex_set_options('pd');
         mb_internal_encoding('UTF-8');
 
-        $arr = array("/", "«", "»", "№");
+        $arr = array("/", "«", "»", "№", "\"", "'", ".", "’", ")", "(");
         $str = str_replace($arr, "", $str);
 
         if (strtolower(mb_detect_encoding($str,

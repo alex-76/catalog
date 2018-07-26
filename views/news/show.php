@@ -33,13 +33,13 @@ $this->registerMetaTag(['name' => 'description', 'content' => $result[0]->meta_d
     <div class="col-md-6">
         <?php if(!empty($prev_article[0]['news_id'])):  ?>
             <small>Попередня стаття:</small><br>
-            <a href="<?=Url::to(['news/'.$prev_article[0]['news_id'].'/'.\app\controllers\NewsController::translit($prev_article[0]['meta_keyword'])])?>"><?= $prev_article[0]['name_news']; ?></a>
+            <a href="<?= Url::to(['news/' . $prev_article[0]['news_id'] . '/' . Yii::$app->translit->translit($prev_article[0]['meta_keyword'])]) ?>"><?= $prev_article[0]['name_news']; ?></a>
         <?php endif;?>
     </div>
     <div class="col-md-6 text-right">
         <?php if(!empty($next_article[0]['news_id'])):  ?>
         <small>Наступна стаття:</small><br>
-        <a href="<?=Url::to(['news/'.$next_article[0]['news_id'].'/'.\app\controllers\NewsController::translit($next_article[0]['meta_keyword'])])?>"><?= $next_article[0]['name_news']; ?></a>
+            <a href="<?= Url::to(['news/' . $next_article[0]['news_id'] . '/' . Yii::$app->translit->translit($next_article[0]['meta_keyword'])]) ?>"><?= $next_article[0]['name_news']; ?></a>
         <?php endif;?>
     </div>
 </div>
