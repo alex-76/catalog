@@ -12,6 +12,9 @@ class NewsController extends \yii\web\Controller
 {
     public $layout = 'news';
 
+    /*
+     * List news
+     */
     public function actionIndex()
     {
 
@@ -39,6 +42,9 @@ class NewsController extends \yii\web\Controller
         ]);
     }
 
+    /*
+     * Show selected new
+     */
     public function actionShow(){
 
 
@@ -75,6 +81,9 @@ class NewsController extends \yii\web\Controller
 
     }
 
+    /*
+     * Add & create review for new
+     */
     public function actionCreate()
     {
         $model = new Reviews();

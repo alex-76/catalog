@@ -60,7 +60,7 @@ echo Nav::widget([
             ['label' => 'ПРО НАС', 'url' => ['/about']]:
             '<li class="active"><span class="active-item">ПРО НАС</span></li>',
         (Yii::$app->controller->id.'/'.Yii::$app->controller->action->id != 'news/index')?
-            ['label' => 'НОВИНИ', 'url' => ['news/index']]:
+            ['label' => 'НОВИНИ', 'url' => ['/news']] :
             '<li class="active"><span class="active-item">НОВИНИ</span></li>',
         (Yii::$app->controller->id.'/'.Yii::$app->controller->action->id != 'catalog/plan')?
             ['label' => 'ПОСЛУГИ', 'url' => ['/plan']] :

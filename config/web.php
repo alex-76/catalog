@@ -48,9 +48,6 @@ $config = [
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             'viewPath' => '@app/mail',
-            // send all mails to a file by default. You have to set
-            // 'useFileTransport' to false and configure a transport
-            // for the mailer to send real emails.
             //'useFileTransport' => false,
         ],
         'log' => [
@@ -75,19 +72,19 @@ $config = [
                 'post/<subcat_id:\d+>/page/<page:\d+>' => 'catalog/post',
                 'post/<subcat_id:\d+>' => 'catalog/post',
 
+                // show selected company
                 'show/<post_id:\d+>/<alias:[\w-]+>' => 'catalog/show',
 
-                // any actions
-                '<action:\w+>' => 'catalog/<action>',
-
                 // news
-                'news/index' => 'news/index',
+                'news' => 'news/index',
                 'news/<news_id:\d+>/<alias:[\w-]+>' => 'news/show',
 
                 //filters
                 'catalog/<reg_id:\d+>/<alias:[\w-]+>' => 'catalog/filter',
                 'catalog/<reg_id:\d+>/<area_id:\d+>/<alias:[\w-]+>' => 'catalog/filter',
 
+                // any actions
+                '<action:\w+>' => 'catalog/<action>',
             ],
         ],
         'translit' => 'app\components\Translit',
