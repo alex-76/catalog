@@ -28,7 +28,7 @@ class NewsWidget extends Widget
                            <a href="/news/' . $val['news_id'] . '/' . Yii::$app->translit->translit($val['meta_keyword']) . '">' . $val['name_news'] . '</a></div>
                            <p class="last-news-content">'.\yii\helpers\StringHelper::truncate(strip_tags($val['description']),130,'...').'</p>';
         }
-        $this->html .= '<p class="text-left"><a href="/news/index">Всі новини &#8594;</a></p>';
+        $this->html .= '<p class="text-left"><a href="/news">Всі новини &#8594;</a></p>';
 
     }
 
